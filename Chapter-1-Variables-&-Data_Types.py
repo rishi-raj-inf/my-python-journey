@@ -26,17 +26,17 @@ pi = 3.14
 print("The Value Of Pi is", pi)
 # Output = The Value Of Pi is 3.14
 
-#. Q.5. Simple Greeting.
+# Q.5. Simple Greeting.
 name1 = "C"
 print(name1 + " Programming.")
 # Output = C Programming.
 
-# Q.6. Modulo Operator(%) se remainder nikalein.
+# Q.6. Modulo Operator (%) se remainder nikalein.
 num4 = 5
 num5 = 17
 print("17 % 5 =", num5 % num4)
 # Output = 17 % 5 = 2
-# Note : 5 % 17 then output is 5. [% Rule] Always remember The right side value is lesser than left side value [17 % 5 = 2] 
+# Note: Agar left value choti ho (5 % 17), toh remainder hamesha left value (5) hi aayega..
 
 # Q.7. Power Operator(**).
 num6 = 2
@@ -44,7 +44,7 @@ power = 4
 print("2^4 =", num6 ** power)
 # Output = 2^4 = 16
 
-# Q.8. Floor Division(//).
+# Q.8. Floor Division (//).
 num7 = 2
 num8 = 5
 print("Floor Division: 5 // 2 = ", num8 // num7)
@@ -58,7 +58,7 @@ print("Division: 5 / 2 = ", num8 / num7)
 strr = int("22")
 print(type(strr))
 # Output = <class 'int'>
-# Note : strr = int("wh") or int("2.5") then, Output = invalid literal for int() with base 10: 'wh' or '2.5' [Error] 
+# Note: strr = int("wh") or int("2.5") then, Output = invalid literal for int() with base 10: 'wh' or '2.5' [Error]..
 
 # Q.10. Calculate Cube of a number.
 num9 = 9
@@ -116,11 +116,11 @@ a = a - b
 print("a =", a, "& b =", b)
 # Output = a = 5 & b = 10
 """
-Dry Run => a = 10
+Dry Run:   a = 10
            b = 5
            a = a + b = 10 + 5 = 15
-           b = a - b = 15 - 10 = 5
-           a = a - b = 15 - 5 = 10
+           b = a - b = 15 - 5 = 10
+           a = a - b = 15 - 10 = 5
            a = 5 & b = 10
 """
 
@@ -138,38 +138,38 @@ print(ord("A"))
 print(chr(65))
 # Output = A
 
-# Q.21 XOR (^) Operator For Encryption.
+# Q.21. XOR (^) Operator For Encryption.
 data = 6
 key = 4
 encrypted = data ^ key
 lock_open = encrypted ^ key 
 print(lock_open)  # ( A ^ Key ) ^ Key = A
 """
-Dry Run :- XOR(^) = Same Bits -> {0,0} and {1,1} output -> {0}, Different Bits -> {1,0} and {0,1} output -> {1}
+Dry Run:   XOR(^) = Same Bits -> {0,0} and {1,1} output -> {0}, Different Bits -> {1,0} and {0,1} output -> {1}
            (data = 6 = 0110), (key = 4 = 0100), (encrypted = 2 = 0010)
            encrypted = data ^ key = 0110 ^ 0100 = 0010 (2)
            lock_open = encrypted ^ key = 0010 ^ 0100 = 0110 (6)
 """
 
 # Q.22. Bitwise Left Shift (Scaling).
-#  [ Scaling: X << Y = X * 2^Y ]  Ex:- 5 << 2 = 5 * 2^2 = 20
+#  [ Scaling: X << Y = X * 2^Y ]  Ex: 5 << 2 = 5 * 2^2 = 20
 x = 2
 print(2 << 3)
 """
-Dry Run :- 2 (0010)
+Dry Run:   2 (0010)
            0010 First Left Shift = 00100
            00100 Second Left Shift = 001000
            001000 Third Left Shift = 0010000
            0010000 (16)
-           Formula -> 2 << 3 =  2 * 2^3 = 2 * 8 = 16
+           Formula: 2 << 3 =  2 * 2^3 = 2 * 8 = 16
 """
 
 # Q.23. Bitwise Right Shifting (Scaling).
-# [ Scaling Right: X >> Y = X / 2^Y ] Ex:- 4 >> 2 = 4 / 2^2 = 4 / 4 = 1
+# [ Scaling Right: X >> Y = X / 2^Y ] Ex: 4 >> 2 = 4 / 2^2 = 4 / 4 = 1
 x = 8
 print(x >> 2)
 """
-Dry Run :- 8 (1000)
+Dry Run:   8 (1000)
            1000 First Right Shift 0100
            0100 Second Right Shift 0010
            0010 (2)
@@ -192,7 +192,7 @@ print(list1 is list2) # Memory Number Not Same Output Is False
 Format: a + bj
 a = Real Number (Asli hissa)
 b = Imaginary Number (Kaalpnik hissa, jiske aage j laga ho.)
-Note :- In Electronics & Engineering 'i' is reserve for Electric Current that's why we use in Python 'j' or 'J' for Imaginary Number.
+Note: In Electronics & Engineering 'i' is reserve for Electric Current that's why we use in Python 'j' or 'J' for Imaginary Number.
 """
 x = 4 + 6j
 y = complex(2, 3)
@@ -202,14 +202,14 @@ print("Second Real Number :", y.real)
 print("First Imaginary Number :", x.imag)
 print("Second Imaginary Number :", y.imag)
 
-print("Add Two Complex Number :", x + y)
+print("Add Two Complex Numbers :", x + y)
 print("Subtract Two Complex Numbers :", x - y)
 """
 Output = First Real Number : 4.0
          Second Real Number : 2.0
          First Imaginary Number : 6.0
          Second Imaginary Number : 3.0
-         Add Two Complex Number : (6+9j)
+         Add Two Complex Numbers : (6+9j)
          Subtract Two Complex Numbers : (2+3j)
 """
 
@@ -228,7 +228,7 @@ print(f"Hi.. My Name is {name}, I'm {age} years old & I'm from {city}.")
 # Q.28. Body Mass Index (BMI) Calculator. [ Formula :- Weight / ( Height^2 ) ]
 weight = int(input("Enter Your Weight(kg) : "))
 height = float(input("Enter Your Height(m) : "))
-b_m_i = (weight / ( height ** 2))
+b_m_i = (weight / (height ** 2))
 print(f"Your Body Mass Index Is {round(b_m_i, 2)}.")
 # Output = Your Body Mass Index Is 17.36.
 
@@ -251,14 +251,14 @@ weeks = remain_day_m // 7
 extra_days = remain_day_m % 7
 print(f"{years} Years, {month} Months, {weeks} Weeks & {extra_days} Days.")
 """
-Dry Run:- 1. Enter Days = 500
+Dry Run:  1. Enter Days = 500
           2. Years = 500 // 365 = 1
             .Remaining Days After Year = 500 % 365 = 135
           3. Months = 135 // 30 = 4
             .Remaining Days After Month = 135 % 30 = 15
           4. Weeks = 15 // 7 = 2
-          5. Days = 15 % 7 == 1
-            Result :- 1 Years, 4 Months, 2 Weeks & 1 Days.
+          5. Days = 15 % 7 = 1
+            Result: 1 Years, 4 Months, 2 Weeks & 1 Days.
 """
 
 # Q.31. Minutes to Hours and Minutes.
@@ -267,7 +267,7 @@ hrs = to_min // 60
 min = to_min % 60
 print(f"{hrs} Hours & {min} Minutes.")
 """
-Dry Run :- to_min = 256
+Dry Run:   to_min = 256
            hrs = 256 // 60 = 4
            min = 256 % 60 = 16
            Result = 4 Hours & 16 Minutes
@@ -315,7 +315,7 @@ Encrypted: True
 """
 
 # Q.36. Round-Robin Server Routing (Modulo Operator).
-# 5 servers hain (0,1,2,3,4) . Agar 127th packet aaye, toh wo kis server par jayega..
+# 5 servers hain (0, 1, 2, 3, 4). Agar 127th packet aaye, toh wo kis server par jayega..
 total_server = 5
 packet_number = 127
 assigned_server = packet_number % total_server
