@@ -6,7 +6,17 @@ This repository serves as my foundational 'Proof of Work' in Python Programming.
 ## 📁 Core Concepts & Tracked Implementations
 Here is a comprehensive breakdown of what I have implemented & mastered in Chapter 1:
 
-* **Chapter 1: Variables & Data Types (40 Practical Questions Included):**
+### 1. Foundation & Syntax (`Chapter-1-Basic-Syntax-Practice.py`)
+
+    * **Core Syntactical Rules:** Mastered PEP 8 spacing standard, single/multi-line documentation, and structural formatting.
+
+    * **Primitive Data & Operations:** Implemented basic Type Checking (`type()`), Type Casting, and String manipulation (Single, Double, Triple Quotes).
+
+    * **Operator Mechanics:** Executed foundational scripts using Core Python Operators (Arithmetic, Relational, Assignment, and Logical) with precedence rules.
+
+### 2. Advanced Logic & Problem Solving (`Chapter-1-Variables-&-Data_Types.py`)
+
+    * **40 Practical Scenarios:** A comprehensive question bank applying foundations to real-world logic.
 
     * **Basic I/O & Dynamic Formatting:** Handled user profiles, dynamic inputs, and formatted outputs using clean Python f-strings.
 
@@ -21,6 +31,7 @@ Here is a comprehensive breakdown of what I have implemented & mastered in Chapt
     * **Memory Forensics & Identity:** Used the `id()` function to trace variable placements in system RAM and evaluated the structural difference between data equality (`==`) and memory identity (`is`).
 
     * **Algorithmic Simulations:** Programmed a Round-Robin Server Load Balancing routing system using Modulo (`%`) algorithms without relying on conditional loops.
+
 
 ## 🛠 Tech Stack
 * **Language:** Python 3.x
