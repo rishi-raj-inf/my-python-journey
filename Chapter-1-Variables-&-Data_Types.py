@@ -1,8 +1,11 @@
 print("Hello World")
 
-# Chapter1 : Variables & Data Types
+#     =========================================
+#         CHAPTER 1: VARIABLES & DATA TYPES
+#     =========================================
 
-# 40 Questions & Their Codes..
+
+# ---- 40 Questions & Their Codes ----
 
 # Q.1. Apna Name aur College ka naam variables mein store karke print karein.
 name = "Python"
