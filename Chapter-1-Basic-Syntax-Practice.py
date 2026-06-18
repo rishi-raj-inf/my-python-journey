@@ -26,9 +26,9 @@ print(2 ** 4)
 print("My Name Is", "Unknown")
 print("My Age Is\n", 18)
 print("Ag Og\t", "Bhago G")
-print("Hi..", end="!")
+print("Hi..", end="!") # Default => end= "\n"
 print("Bye..")
-print("Bye..", "Hi..", sep="!!")
+print("Bye..", "Hi..", sep="!!") # Default => sep= " "
 """
 Output =
 35
@@ -41,6 +41,8 @@ My Name Is Unknown
 My Age Is
  18
 Ag Og    Bhago G
+Hi..!Bye..
+Bye..!!Hi..
 """
 
 
@@ -67,7 +69,7 @@ Output:
 My Name Is:  Unknown
 My Age Is:  18
 My CGPA Is:  9.9
-My Name Unknown Age 18 And CGPA 9.9 .
+My Name Unknown Age 18 And CGPA 9.9.
 <class 'str'>
 <class 'int'>
 <class 'float'>
