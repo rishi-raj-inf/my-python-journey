@@ -187,7 +187,7 @@ print(x is None)
 list1 = [1, 2, 3]
 list2 = [1, 2, 3]
 print(list1 == list2) # Data Same Output Is True
-print(list1 is list2) # Memory Number Not Same Output Is False
+print(list1 is list2) # Memory Address Not Same Output Is False
 # Output = True, False
 
 # Q.25. Complex Math for AI.

@@ -172,6 +172,27 @@ print(not True and False or True) # Output = True
 
 
 
+# ---- Membership Operators (in, not in) ----
+# Checks if a substring exists within a string.
+
+# Exanple: Checking for malicious SQL injection keywords.
+user_input = "SELECT * FROM users WHERE name = 'admin'"
+
+if "SELECT" in user_input.upper():
+  print("Alert: Possible SQL Injection detected!")
+else:
+  print("Input is safe.")
+# Output = Alert: Possible SQL Injection detected!
+
+# Example: Blocking invalid characters.
+email = "admin#gmail.com"
+if "@" not in email:
+  print("Invalid Email Format!")
+# Output = Invald Email Format!
+  
+
+
+
 # ---- String & Numeric Operations ----
 
 # Note: String & Numeric values can operate together using '*'.
