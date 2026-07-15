@@ -11,16 +11,18 @@ str2 = "My Name Is UNKNOWN.\tI'm 18 Years Old."
 print(str1)
 print(str2)
 """
-Output = My Name Is UNKNOWN.
-         I'm 18 Years Old.
-         My Name Is UNKNOWN.     I'm 18 Years Old.
+Output =
+My Name Is UNKNOWN.
+I'm 18 Years Old.
+My Name Is UNKNOWN.     I'm 18 Years Old.
 """
 
 # Concatenation
 str3 = "Hello "
 str4 = "World"
 final_str = str3 + str4
-print(final_str)         # Hello World
+print(final_str)
+# Output = Hello World
 
 # Length Of String.
 length = len(str3)
@@ -62,7 +64,7 @@ print(str5[::-1])   # Output = iJ iH
 
 str6 = "hey hi vye vye"
 
-# -- Case Modifiers (lower, upper, capitalize, swapcase) --
+# -- Case Modifiers (lower, upper, capitalize, title, swapcase) --
 
 # str.lower() => Small all char.
 print(str6.lower())
@@ -76,6 +78,12 @@ print(str6.upper())
 print(str6.capitalize())
 # Output = Hey hi vye vye
 
+# str.title() => Capitalizes the first letter of EVERY word in the string.
+# Example: Formatting a full name properly.
+full_name = "raja maharaja"
+print(full_name.title())
+# Output = Raja Maharaja
+
 # The Case Combo: str.swapcase() => Converts all uppercase characters to lowercase and all lowercase characters to uppercase.
 # Example: Inverting a badly formatted input.
 txt3 = "lOCAL bOY"
@@ -83,17 +91,21 @@ swapped = txt3.swapcase()
 print(swapped)
 # Output = Local Boy
 
-# -- Search & Replace Functions (endswith, startswith, find, rfind, replace, count) --
+# -- Search & Replace Functions (endswith, startswith, index, find, rfind, replace, count) --
 
-# str.endswith() => return true if string ends with substring.
+# str.endswith() => Returns True if string ends with substring.
 print(str6.endswith("ye"))
 # Output = True
 
-# str.startswith() => return true if string start with substring.
+# str.startswith() => Returns True if string starts with substring.
 print(str6.startswith("hey"))
 # Output = True
 
-# str.find() => return 1st index of 1st occurrence.
+# str.index() => Returns 1st index of 1st occurrence. (Throws ValueError if substring is not found, unlike find() which returns -1).
+print(str6.index("hi"))
+# Output = 4
+
+# str.find() => Returns 1st index of 1st occurrence.
 print(str6.find("hi"))
 # Output = 4
 
@@ -115,17 +127,17 @@ file_name = file_path[last_slash_index + 1 : ]
 print(file_name)
 # Output = malware.exe
 
-# str.replace(old, new) => replaces all occurrences of old.
+# str.replace(old, new) => Replaces all occurrences of old.
 print(str6.replace("vye", "Bye"))
 # Output = hey hi Bye Bye
 
-# str.count("abc") => counts the occurrence of substring.
+# str.count("abc") => Counts the occurrences of substring.
 print(str6.count("vye"))
 # Output = 2
 
-# -- Stripping & Padding (strip, lstrip, rstrip, zfill) --
+# -- Stripping & Padding (strip, lstrip, rstrip, center, ljust, rjust, zfill) --
 
-# str.strip("  abc  ") => Removing Extra Space.
+# str.strip("  abc  ") => Removes Extra Space.
 str6 = "  hey hi Bye Bye  "
 print(str6.strip())
 # Output = hey hi Bye Bye
@@ -139,6 +151,12 @@ print(f"rstrip: '{str66.rstrip()}'") # Output = rstrip: '  Hi'
 str66 = "00_Hi_11"
 print(f"lstrip: '{str66.lstrip('0')}'") # Output = lstrip: '_Hi_11'
 print(f"rstrip: '{str66.rstrip('1')}'") # Output = rstrip: '00_Hi_'
+
+# String Alignment (center, ljust, rjust) => Fills the remaining space with a specified character (default is space).
+title_txt = " MAIN MENU "
+print(title_txt.center(30, "=")) # Output = ========= MAIN MENU ==========
+print(title_txt.ljust(30, "*"))  # Output =  MAIN MENU *******************
+print(title_txt.rjust(30, "-"))  # Output = ------------------- MAIN MENU 
 
 # The Binary/Padding Combo.
 
@@ -205,7 +223,7 @@ print(right_split)
 
 # Example: Breaking a multi-line server log into an analyzable list.
 server_log = """Error 404: Page Not Found
-Warning : CPU overload at 90%
+Warning: CPU overload at 90%
 Access Granted: Bruce Wayne Logged in"""
 
 # Har ek line ko ek list item bana do.
@@ -220,8 +238,8 @@ print(f"First event: {log_list[0]}")
 # Output = First event: Error 404: Page Not Found
 
 # str.join(iterable) => Joins the elements of a list (or iterable) into a single string, using the string as a separator (glue).
-web_Folder = ["https:", "users", "admin", "name", "admitcard", "download", ".com"]
-site_path = "//".join(web_Folder)
+web_folder = ["https:", "users", "admin", "name", "admitcard", "download", ".com"]
+site_path = "//".join(web_folder)
 print(site_path)
 # Output = https://users//admin//name//admitcard//download//.com
 
@@ -243,7 +261,7 @@ print(pin3.isdigit()) # Output = False
 # Example: Validating a First Name.
 name_1 = "Python"
 name_2 = "Python3"      # Number is present
-name_3 = "Mr Python"    # Space is  present
+name_3 = "Mr Python"    # Space is present
 print(name_1.isalpha()) # Output = True
 print(name_2.isalpha()) # Output = False
 print(name_3.isalpha()) # Output = False
@@ -269,7 +287,7 @@ pan2 = "Abcde1234F"
 print(pan1.isupper()) # Output = True
 print(pan2.isupper()) # Output = False
 
-# str.isspace() => The Blank Space Checker
+# str.isspace() => The Blank Space Checker.
 # Example: Blocking empty form submissions.
 input1 = "  "
 input2 = " Admin "
@@ -325,7 +343,47 @@ print(tet2.isdigit()) # Output = False
 print(tet2.isnumeric()) # Output = True
 
 
-# ---- Conditional Statements (if-Elif-Else) ----
+# ---- Built-in Numeric Utilities ----
+
+# -- Core Math Functions (abs, round, max, min, pow, sum, divmod) --
+
+# abs(number) => Returns the absolute (positive) value of a number. Removes the negative sign.
+# Example: Calculating exact difference or distance.
+negative_num = -22
+float_num = -99.98
+print(abs(negative_num)) # Output = 22
+print(abs(float_num)) # Output = 99.98
+
+# round(number, ndigits) => Rounds a floating-point number to the specified number of decimals.
+# Example: Rounding off scientific or financial data.
+pi_val = 3.14159
+print(round(pi_val)) # Output = 3
+print(round(pi_val, 2)) # Output = 3.14
+
+# max(arg1, arg2, ...) => Returns the largest item among the given arguments.
+# min(arg1, arg2, ...) => Returns the smallest item among the given arguments.
+# Example: Finding highest and lowest bounds without writing long if-else conditions.
+print(max(10, 50, 25, 90)) # Output = 90
+print(min(10, 50, 25, 90)) # Output = 10
+
+# pow(base, exp) => Returns base raised to the power of exp (Same as base ** exp).
+# Example: Calculating squares, cubes, or basic cryptographic keys.
+print(pow(2, 3)) # Output = 8 (2 * 2 * 2)
+print(pow(5, 2)) # Output = 25 (5 * 5)
+
+# sum(iterable) => Adds all items in an iterable (like a list or tuple) and returns the total.
+# Example: Calculating total payload size or total marks in one line.
+size_list = [1024, 2048, 412, 4022]
+print(sum(size_list)) # Output = 7506
+
+# divmod(a, b) => Returns a tuple containing both quotient and remainder (a // b, a % b).
+# Example: Converting total seconds into minutes and seconds.
+total_seconds = 135
+minutes, seconds = divmod(total_seconds, 60)
+print(f"{minutes} Min and {seconds} Sec") # Output = 2 Min and 15 Sec
+
+
+# ---- Conditional Statements (if-elif-else) ----
 
 age = int(input("Enter Your Age: "))
 if age >= 18:
@@ -335,7 +393,7 @@ else:
 # Output = Vote [input -> age = 19]
 
 
-light = input("Enter Light Colour : ").lower()
+light = input("Enter Light Colour: ").lower()
 if light == "red":
     print("Stop..!!")
 elif light == "yellow":
@@ -347,7 +405,7 @@ else:
 # Output = Stop..!! [input -> light = red]
 
 
-marks = int(input("Enter Your Marks : "))
+marks = int(input("Enter Your Marks: "))
 if marks >= 90 and marks <= 100:
     print("A++")
 elif marks >= 80 and marks < 90:
@@ -360,19 +418,21 @@ elif marks >= 50 and marks < 60:
     print("C")
 elif marks >= 33 and marks < 50:
     print("D")
-else:
+elif marks >= 0 and marks < 33:
     print("Fail..")
+else:
+    print("Invalid Marks (Must be 0-100)")
 # Output = A++ [input -> marks = 98]
 
-food = input("Enter Food : ").upper()
+food = input("Enter Food: ").upper()
 eat = "Yes" if food == "CAKE" else "No"
 print(eat)
-# Output = Yes [input -> Food = cake]
+# Output = Yes [input -> food = cake]
 
 print("Yes") if food == "CAKE" or food == "JALEBI" else print("No")
 # Output = No [input -> food = halwa]
 
-vote = int(input("Enter Your Age : "))
+vote = int(input("Enter Your Age: "))
 vote = ("No", "Yes")[vote >= 18]
 print(vote)
 # Output = No [input -> age = 17]
@@ -392,55 +452,55 @@ else:
     print("Access Denied: Invalid Username.")
 """
 Dry Run:
-Step1: If -> Username = True & Password = True
-Step2: Checking Outer Condition -> Username == True
-Step3: Checking Inner Condition -> Password == True
+Step1: If -> username = True & password = True
+Step2: Checking Outer Condition -> username == True
+Step3: Checking Inner Condition -> password == True
 Step4: Output = Access Granted! Welcome Admin.
 But..
-Step1: If -> Username = True & Password = False
-Step2: Checking Outer Condition -> Username == True
-Step3: Checking Inner Condition -> Password == False
+Step1: If -> username = True & password = False
+Step2: Checking Outer Condition -> username == True
+Step3: Checking Inner Condition -> password == False
 Step4: Output = Access Denied: Wrong Password.
 But..
-Step1: If -> Username = False
+Step1: If -> username = False
 Step2: Output = Access Denied: Invalid Username.
 """
 
 # ---- Practical Mini-Programs ----
 
 # Write a program to input user's first name & print its length.
-str7 = input("Enter Your Name : ")
+str7 = input("Enter Your Name: ")
 len1 = len(str7)
-print(f"Length Of Your Name : {len1}")
+print(f"Length Of Your Name: {len1}")
 """
-Dry Run:- 1. Enter Your Name : UNKNOWN
-          2. len = 7
-          3. Length Of Your Name :7
+Dry Run: 1. Enter Your Name: UNKNOWN
+         2. len = 7
+         3. Length Of Your Name: 7
 """
 
 # Write a program to find occurrence of '$' in a string.
 str8 = "$ Dollar Hui $ Hui Hui $"
 count = str8.count("$")
-print(f"The Occurrence Of '$' : {count}")
-# Output = The Occurrence Of '$' : 3
+print(f"The Occurrence Of '$': {count}")
+# Output = The Occurrence Of '$': 3
 
 # Write a program to check if a number entered by the user is odd or even.
-num3 = int(input("Enter A Number : "))
+num3 = int(input("Enter A Number: "))
 if num3 % 2 == 0:
     print("Even")
 else:
     print("Odd")
 
 # Write a program to find the greatest of 3 numbers entered by the user.
-a = int(input("a : "))
-b = int(input("b : "))
-c = int(input("c : "))
+a = int(input("a = "))
+b = int(input("b = "))
+c = int(input("c = "))
 if a >= b and a >= c:
-    print(f"The Largest Number Is : {a}")
+    print(f"The Largest Number Is: {a}")
 elif b >= c:
-    print(f"The Largest Number Is : {b}")
+    print(f"The Largest Number Is: {b}")
 else:
-    print(f"The Largest Number Is : {c}")
+    print(f"The Largest Number Is: {c}")
 
 # Write a program to find the greatest of 4 numbers entered by the user.
 a1 = int(input("a = "))
@@ -448,16 +508,16 @@ b1 = int(input("b = "))
 c1 = int(input("c = "))
 d1 = int(input("d = "))
 if a1 >= b1 and a1 >= c1 and a1 >= d1:
-    print(f"The Largest Number Is : {a1}")
+    print(f"The Largest Number Is: {a1}")
 elif b1 >= c1 and b1 >= d1:
-    print(f"The Largest Number Is : {b1}")
+    print(f"The Largest Number Is: {b1}")
 elif c1 >= d1:
-    print(f"The Largest Number Is : {c1}")
+    print(f"The Largest Number Is: {c1}")
 else:
-    print(f"The Largest Number Is : {d1}")
+    print(f"The Largest Number Is: {d1}")
 
-# Write A Program To Check If A Number Is A Multiple Of 7 Or Not.
-num4 = int(input("Enter A Number : "))
+# Write a program to check if a number is a multiple of 7 or not.
+num4 = int(input("Enter A Number: "))
 if num4 % 7 == 0:
     print(f"{num4} Is A Multiple Of 7")
 else:
